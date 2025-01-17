@@ -6,6 +6,36 @@ HashiCorp Waypoint Community Edition is no longer actively maintained. For addit
 
 ----------------------------------------
 
+## Workflow
+
+```mermaid
+graph TD
+    A[Waypoint Workflow] --> B[Build]
+    B --> C[Docker Image]
+    B --> D[Buildpacks]
+    C --> E[Deploy to Kubernetes]
+    C --> F[Deploy to Nomad]
+    C --> G[Deploy to AWS ECS]
+    D --> E
+    D --> F
+    D --> G
+    E --> H[Release]
+    F --> H
+    G --> H
+    H --> I[Manage Releases with Waypoint]
+    A --> J[Services]
+    J --> K[Localstack]
+    J --> L[Pebble]
+    J --> M[Postgres]
+    J --> N[Vault]
+    J --> O[Consul]
+    K --> P[Local AWS Services]
+    L --> Q[ACME Testing]
+    M --> R[PostgreSQL Database]
+    N --> S[Secret Management]
+    O --> T[Service Discovery]
+```
+
 # Waypoint
 
 * Website: https://www.waypointproject.io
